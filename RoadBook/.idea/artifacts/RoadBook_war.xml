@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="RoadBook:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Roadbook.com.war">
+      <element id="artifact" artifact-name="RoadBook:war exploded" />
+    </root>
+  </artifact>
+</component>
