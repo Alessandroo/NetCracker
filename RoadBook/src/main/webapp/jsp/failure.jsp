@@ -8,9 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Failure</title>
 </head>
 <body>
-
+    <h2>Error. Try again!!!</h2>
+    <br>
+    <form method="get" action="/list">
+        <input type="submit" value="Go to list">
+    </form>
 </body>
 </html>
