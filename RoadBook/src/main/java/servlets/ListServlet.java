@@ -13,6 +13,8 @@ import java.io.IOException;
 public class ListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        super.doGet(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/list.jsp");
+
+        dispatcher.forward(request, response);
     }
 }
