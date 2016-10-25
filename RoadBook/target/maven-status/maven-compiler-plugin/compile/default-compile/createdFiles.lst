@@ -1,7 +1,9 @@
-businesslayer\BusinessLogic.class
-databaselayer\DataBaseDriver.class
-servlets\DeleteRecordServlet.class
-servlets\AddRecordServlet.class
-servlets\SaveRecordServlet.class
-servlets\ListServlet.class
-servlets\EditRecordServlet.class
+com\netcracker\servlets\AddRecordServlet.class
+com\netcracker\servlets\ListServlet.class
+com\netcracker\servlets\DeleteRecordServlet.class
+com\netcracker\databaselayer\DataClient.class
+com\netcracker\model\Record.class
+com\netcracker\servlets\EditRecordServlet.class
+com\netcracker\businesslayer\BusinessLogic.class
+com\netcracker\databaselayer\DataBaseDriver.class
+com\netcracker\servlets\SaveRecordServlet.class

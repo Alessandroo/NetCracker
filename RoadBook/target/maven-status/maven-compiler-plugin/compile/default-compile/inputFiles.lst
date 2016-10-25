@@ -1,7 +1,9 @@
-D:\Work\NetCracker\RoadBook\src\main\java\databaselayer\DataBaseDriver.java
-D:\Work\NetCracker\RoadBook\src\main\java\servlets\SaveRecordServlet.java
-D:\Work\NetCracker\RoadBook\src\main\java\servlets\DeleteRecordServlet.java
-D:\Work\NetCracker\RoadBook\src\main\java\servlets\ListServlet.java
-D:\Work\NetCracker\RoadBook\src\main\java\servlets\EditRecordServlet.java
-D:\Work\NetCracker\RoadBook\src\main\java\servlets\AddRecordServlet.java
-D:\Work\NetCracker\RoadBook\src\main\java\businesslayer\BusinessLogic.java
+D:\Work\NetCracker\RoadBook\src\main\java\com\netcracker\businesslayer\BusinessLogic.java
+D:\Work\NetCracker\RoadBook\src\main\java\com\netcracker\servlets\AddRecordServlet.java
+D:\Work\NetCracker\RoadBook\src\main\java\com\netcracker\servlets\DeleteRecordServlet.java
+D:\Work\NetCracker\RoadBook\src\main\java\com\netcracker\servlets\EditRecordServlet.java
+D:\Work\NetCracker\RoadBook\src\main\java\com\netcracker\databaselayer\DataBaseDriver.java
+D:\Work\NetCracker\RoadBook\src\main\java\com\netcracker\model\Record.java
+D:\Work\NetCracker\RoadBook\src\main\java\com\netcracker\servlets\SaveRecordServlet.java
+D:\Work\NetCracker\RoadBook\src\main\java\com\netcracker\servlets\ListServlet.java
+D:\Work\NetCracker\RoadBook\src\main\java\com\netcracker\databaselayer\DataClient.java
