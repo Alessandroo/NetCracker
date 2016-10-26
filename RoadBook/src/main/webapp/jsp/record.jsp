@@ -16,12 +16,12 @@
     <div class="container">
         <form method="post" action="${action}">
             <h2>Please enter the data</h2>
-            <input type="text" name="country" class="form-control" placeholder="Country" required>
-            <input type="text" name="number" class="form-control" placeholder="Number" required>
-            <input type="text" name="name" class="form-control" placeholder="Name" required>
-            <input type="text" name="longer" class="form-control" placeholder="Long(km)" required>
-            <input type="text" name="control" class="form-control" placeholder="Control" required>
-            <input type="hidden" name="id" value="${id}">
+            <input type="text" name="country" class="form-control" placeholder="Country" value="${record.country}" required>
+            <input type="text" name="number" class="form-control" placeholder="Number" value="${record.number}" required>
+            <input type="text" name="name" class="form-control" placeholder="Name" value="${record.name}" required>
+            <input type="text" name="longer" class="form-control" placeholder="Long(km)" value="${record.longer}" required>
+            <input type="text" name="control" class="form-control" placeholder="Control" value="${record.control}" required>
+            <input type="hidden" name="id" value="${record.id}">
             <input type="submit" name="Ok" class="btn btn-lg btn-success btn-block">
         </form>
     </div>

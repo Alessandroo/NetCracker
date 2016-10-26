@@ -1,4 +1,3 @@
-com\netcracker\businesslayer\Test.class
 com\netcracker\servlets\AddRecordServlet.class
 com\netcracker\servlets\ListServlet.class
 com\netcracker\servlets\DeleteRecordServlet.class

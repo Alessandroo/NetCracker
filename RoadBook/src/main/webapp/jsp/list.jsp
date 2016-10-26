@@ -11,59 +11,63 @@
 <html>
 <head>
     <title>RoadList</title>
-    <%--<style>--%>
-        <%--a {--%>
-            <%--text-decoration: none; /* Отменяем подчеркивание у ссылки */--%>
-        <%--}--%>
-    <%--</style>--%>
+    <style type="text/css">
+        a {
+            text-decoration: none; /* Отменяем подчеркивание у ссылки */
+        }
+        table {
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+            text-align: center;
+        }
+        td, th {
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid black; /* Параметры рамки */
+        }
+        th {
+            background: #b0e0e6; /* Цвет фона */
+        }
+    </style>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
           rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <c:forEach items="${list}" var="item">
-            <h2><c:out value="${item.id}"/></h2>
-        </c:forEach>
+    <div style="margin: auto; width: 45%">
+        <div class="table">
+            <table>
+                <div class="column-header">
+                    <tr>
+                        <td>Country</td>
+                        <td>Number</td>
+                        <td>Name</td>
+                        <td>Long(km)</td>
+                        <td>Control</td>
+                        <td></td>
+                    </tr>
+                </div>
+                <c:forEach items="${list}" var="item">
+                    <tr>
+                        <td>${item.country}</td>
+                        <td>${item.number}</td>
+                        <td>${item.name}</td>
+                        <td>${item.longer}</td>
+                        <td>${item.control}</td>
+                        <td>
+                            <div class="btn-group-vertical">
+                                <a href="edit?id=${item.id}"  class="btn btn-success btn-sm btn-block">Edit</a>
+                                <form method="post" action="delete">
+                                    <input type="hidden" name="id" value="${item.id}">
+                                    <input type="submit" class="btn btn-danger btn-sm btn-block" value="Delete">
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+        <div>
+            <a href="add"  class="btn btn-success btn-lg btn-block">Add</a>
+        </div>
     </div>
-   <%--<div class="page-list">--%>
-       <%--<table aria-orientation="horizontal">--%>
-           <%--<tr>--%>
-               <%--<td><a href="list?page=1">1</a></td>--%>
-               <%--<td><a href="list?page=2">2</a></td>--%>
-               <%--<td><a href="list?page=3">3</a></td>--%>
-           <%--</tr>--%>
-       <%--</table>--%>
-   <%--</div>--%>
-   <%--<div class="table">--%>
-       <%--<table style="border: double">--%>
-           <%--<div class="column-header">--%>
-               <%--<tr>--%>
-                   <%--<td>Страна</td>--%>
-                   <%--<td>Номер</td>--%>
-                   <%--<td>Название</td>--%>
-                   <%--<td>Длина(км)</td>--%>
-                   <%--<td>Управляется</td>--%>
-                   <%--<td></td>--%>
-               <%--</tr>--%>
-           <%--</div>--%>
-           <%--<tr>--%>
-               <%--<td>Беларусь</td>--%>
-               <%--<td>М1</td>--%>
-               <%--<td>Брест-Орша</td>--%>
-               <%--<td>645</td>--%>
-               <%--<td>Белавтодор</td>--%>
-               <%--<td>--%>
-                   <%--<div class="btn-group-vertical">--%>
-                       <%--<a href="edit?id="  class="btn btn-success btn-sm btn-block">Edit</a>--%>
-                       <%--<a href="delete?id=" class="btn btn-danger btn-sm btn-block">Delete</a>--%>
-                   <%--</div>--%>
-               <%--</td>--%>
-           <%--</tr>--%>
-       <%--</table>--%>
-   <%--</div>--%>
-   <%--<div>--%>
-       <%--<a href="add"  class="btn btn-success btn-lg btn-block">Add</a>--%>
-   <%--</div>--%>
 
    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
