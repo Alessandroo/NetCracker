@@ -16,7 +16,7 @@ public class Record {
         this.number = number;
         this.name = name;
         this.longer = longer;
-        this.country = control;
+        this.control = control;
     }
 
     public int getId(){

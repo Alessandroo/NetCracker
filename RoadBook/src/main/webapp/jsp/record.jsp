@@ -9,8 +9,23 @@
 <html>
 <head>
     <title>RecordForm</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          rel="stylesheet">
 </head>
 <body>
-
+    <div class="container">
+        <form method="post" action="${action}">
+            <h2>Please enter the data</h2>
+            <input type="text" name="country" class="form-control" placeholder="Country" required>
+            <input type="text" name="number" class="form-control" placeholder="Number" required>
+            <input type="text" name="name" class="form-control" placeholder="Name" required>
+            <input type="text" name="longer" class="form-control" placeholder="Long(km)" required>
+            <input type="text" name="control" class="form-control" placeholder="Control" required>
+            <input type="hidden" name="id" value="${id}">
+            <input type="submit" name="Ok" class="btn btn-lg btn-success btn-block">
+        </form>
+    </div>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>

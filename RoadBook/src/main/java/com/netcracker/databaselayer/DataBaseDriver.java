@@ -27,23 +27,19 @@ public class DataBaseDriver implements DataClient {
         }
     }
 
-    public ArrayList<Record> getList(int a, int b){
+    public ArrayList<Record> getList() {
         ArrayList<Record> list = null;
 
         try {
-            String search = "select * from roads where id between ? and ?";
+            String search = "select * from roads";
 
-            PreparedStatement search_record;
-
-            search_record = connection.prepareStatement(search);
-            search_record.setInt(1, a);
-            search_record.setInt(2, b);
+            PreparedStatement search_record = connection.prepareStatement(search);
 
             ResultSet resultSet = search_record.executeQuery();
 
             if (resultSet.first()){
                 list = new ArrayList<Record>();
-                while (resultSet.next()) {
+                do {
                     list.add(new Record(
                             resultSet.getInt("id"),
                             resultSet.getString("country"),
@@ -52,7 +48,39 @@ public class DataBaseDriver implements DataClient {
                             resultSet.getInt("long"),
                             resultSet.getString("control")
                     ));
-                }
+                } while (resultSet.next());
+            }
+            search_record.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public ArrayList<Record> getList(int a, int b){
+        ArrayList<Record> list = null;
+
+        try {
+            String search = "select * from roads where `id` BETWEEN ? and ?";
+
+            PreparedStatement search_record = connection.prepareStatement(search);
+            search_record.setInt(1, a);
+            search_record.setInt(2, b);
+
+            ResultSet resultSet = search_record.executeQuery();
+
+            if (resultSet.first()){
+                list = new ArrayList<Record>();
+                do {
+                    list.add(new Record(
+                            resultSet.getInt("id"),
+                            resultSet.getString("country"),
+                            resultSet.getString("number"),
+                            resultSet.getString("name"),
+                            resultSet.getInt("long"),
+                            resultSet.getString("control")
+                    ));
+                } while (resultSet.next());
             }
             search_record.close();
         } catch (SQLException e) {
@@ -65,7 +93,7 @@ public class DataBaseDriver implements DataClient {
         int count = 0;
 
         try {
-            String search = "select count(id) from roads";
+            String search = "select count(`id`) from roads";
 
             Statement statement = connection.createStatement();
 
@@ -86,7 +114,7 @@ public class DataBaseDriver implements DataClient {
 
         try {
 
-            String search = "select * from roads where id=?";
+            String search = "select * from roads where `id`=?";
 
             PreparedStatement search_record = connection.prepareStatement(search);
             search_record.setInt(1, id);
@@ -94,7 +122,6 @@ public class DataBaseDriver implements DataClient {
             ResultSet resultSet = search_record.executeQuery();
 
             if (resultSet.first()) {
-                resultSet.next();
                 record = new Record(
                         resultSet.getInt("id"),
                         resultSet.getString("country"),
@@ -112,9 +139,9 @@ public class DataBaseDriver implements DataClient {
         return record;
     }
 
-    public void saveRecord(Record record) {
+    public void saveRecord(Record record){
         try{
-            String insert = "insert into roads (country, number, name, long, control) values (?, ?, ?, ?, ?)";
+            String insert = "insert into roads (`country`, `number`, `name`, `long`, `control`) values (?, ?, ?, ?, ?)";
 
             PreparedStatement preparedStatement = connection.prepareStatement(insert);
             preparedStatement.setString(1, record.getCountry());
@@ -123,7 +150,7 @@ public class DataBaseDriver implements DataClient {
             preparedStatement.setInt(4, record.getLonger());
             preparedStatement.setString(5, record.getControl());
 
-            preparedStatement.execute();
+            preparedStatement.executeUpdate();
 
             preparedStatement.close();
         } catch (SQLException e) {
@@ -133,7 +160,7 @@ public class DataBaseDriver implements DataClient {
 
     public void updateRecord(Record record) {
         try {
-            String update = "update roads set country=?, number=?, name=?, long=?, control=? where id=?";
+            String update = "update roads set `country`=?, `number`=?, `name`=?, `long`=?, `control`=? where `id`=?";
 
             PreparedStatement preparedStatement = connection.prepareStatement(update);
             preparedStatement.setString(1, record.getCountry());
@@ -150,9 +177,10 @@ public class DataBaseDriver implements DataClient {
             e.printStackTrace();
         }
     }
+
     public void deleteRecord(int id) {
         try {
-            String delete = "delete from roads where id=?";
+            String delete = "delete from roads where `id`=?";
 
             PreparedStatement preparedStatement = connection.prepareStatement(delete);
 
@@ -165,11 +193,9 @@ public class DataBaseDriver implements DataClient {
         }
     }
 
-    public void close(){
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    @Override
+    protected void finalize() throws Throwable {
+        connection.close();
+        super.finalize();
     }
 }

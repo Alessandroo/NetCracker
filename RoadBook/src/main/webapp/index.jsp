@@ -7,12 +7,12 @@
 </head>
 
 <body>
-    <div class="container" style="margin-left: 40px; margin-top: 40px;">
+    <div class="container" style="margin-left: 200px; margin-top: 40px;">
         <header>
             <h2>Hello, welcome to our site!!!</h2>
         </header>
         <article>
-            <a href="list?page=1" class="btn btn-success btn-lg"><i class="icon-next">Перейти дальшe</i></a>
+            <a href="list?page=1" class="btn btn-success btn-lg"><i class="icon-next">Go to list-&gt</i></a>
         </article>
     </div>
 

@@ -9,12 +9,19 @@
 <html>
 <head>
     <title>Success</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          rel="stylesheet">
 </head>
 <body>
-    <h2>Congratulation!!!</h2>
-    <br>
-    <form method="get" action="/list">
-        <input type="submit" value="Go to list">
-    </form>
+<div class="container" style="margin-left: 200px; margin-top: 40px;">
+    <header>
+        <h2>Success operation!!!</h2>
+    </header>
+    <article>
+        <a href="${action}" class="btn btn-success btn-lg"><i class="icon-next">Ok</i></a>
+    </article>
+</div>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>

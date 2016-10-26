@@ -16,32 +16,31 @@ public class BusinessLogic {
         driver = new DataBaseDriver();
     }
 
-    ArrayList<Record> getList(int a, int b){
+    public ArrayList<Record> getList() {
+        return driver.getList();
+    }
+
+    public ArrayList<Record> getList(int a, int b){
         return driver.getList(a, b);
     }
 
-    int getCountPage() {
+    public int getCountPage() {
         return driver.getCountPage();
     }
 
-    Record getRecord(int id) {
+    public Record getRecord(int id) {
         return driver.getRecord(id);
     }
 
-    void saveRecord(Record record) {
+    public void saveRecord(Record record) throws Exception {
         driver.saveRecord(record);
     }
 
-    void updateRecord(Record record) {
-        driver.saveRecord(record);
+    public void updateRecord(Record record) {
+        driver.updateRecord(record);
     }
 
-    void deleteRecord(int id) {
+    public void deleteRecord(int id) {
         driver.deleteRecord(id);
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        driver.close();
     }
 }
