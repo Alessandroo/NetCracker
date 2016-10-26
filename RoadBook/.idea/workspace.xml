@@ -993,15 +993,15 @@
       <workItem from="1477423511108" duration="10299000" />
       <workItem from="1477435208639" duration="3542000" />
       <workItem from="1477479779759" duration="17060000" />
-      <workItem from="1477513146016" duration="1814000" />
+      <workItem from="1477513146016" duration="2290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56922000" />
+    <option name="totallyTimeSpent" value="57398000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
