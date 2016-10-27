@@ -34,6 +34,13 @@
     <div style="margin: auto; width: 45%">
         <div class="table">
             <table>
+                <tr>
+                    <c:forEach items="${pages_list}" var="page">
+                        <th><a href="list?page=${page}"  class="btn btn-success btn-sm btn-block">${page}</a></th>
+                    </c:forEach>
+                </tr>
+            </table>
+            <table>
                 <div class="column-header">
                     <tr>
                         <td>Country</td>
@@ -44,7 +51,7 @@
                         <td></td>
                     </tr>
                 </div>
-                <c:forEach items="${list}" var="item">
+                <c:forEach items="${records_list}" var="item">
                     <tr>
                         <td>${item.country}</td>
                         <td>${item.number}</td>

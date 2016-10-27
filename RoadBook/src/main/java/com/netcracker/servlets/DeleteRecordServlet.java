@@ -21,7 +21,7 @@ public class DeleteRecordServlet extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             BusinessLogic logic = new BusinessLogic();
             logic.deleteRecord(id);
-            request.setAttribute("action", "list");
+            request.setAttribute("action", "list?page=1");
             RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/success.jsp");
 
             dispatcher.forward(request, response);

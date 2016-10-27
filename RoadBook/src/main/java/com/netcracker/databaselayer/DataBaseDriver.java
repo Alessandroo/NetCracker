@@ -57,15 +57,15 @@ public class DataBaseDriver implements DataClient {
         return list;
     }
 
-    public ArrayList<Record> getList(int a, int b){
+    public ArrayList<Record> getList(int begin, int count){
         ArrayList<Record> list = null;
 
         try {
-            String search = "select * from roads where `id` BETWEEN ? and ?";
+            String search = "select * from roads limit ?,?";
 
             PreparedStatement search_record = connection.prepareStatement(search);
-            search_record.setInt(1, a);
-            search_record.setInt(2, b);
+            search_record.setInt(1, begin-1);
+            search_record.setInt(2, count);
 
             ResultSet resultSet = search_record.executeQuery();
 

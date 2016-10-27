@@ -31,7 +31,7 @@ public class AddRecordServlet extends HttpServlet {
                     Integer.parseInt(request.getParameter("longer")), request.getParameter("control"));
             BusinessLogic logic = new BusinessLogic();
             logic.saveRecord(record);
-            request.setAttribute("action", "list");
+            request.setAttribute("action", "list?page=1");
             RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/success.jsp");
 
             dispatcher.forward(request, response);

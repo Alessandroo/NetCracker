@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public interface DataClient {
     ArrayList<Record> getList();
-    ArrayList<Record> getList(int a, int b);
+    ArrayList<Record> getList(int begin, int count);
     int getCountPage();
     Record getRecord(int id);
     void saveRecord(Record record) throws Exception;

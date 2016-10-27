@@ -20,8 +20,8 @@ public class BusinessLogic {
         return driver.getList();
     }
 
-    public ArrayList<Record> getList(int a, int b){
-        return driver.getList(a, b);
+    public ArrayList<Record> getList(int begin, int count){
+        return driver.getList(begin, count);
     }
 
     public int getCountPage() {
